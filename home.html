@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Student Refgistration form</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body onload="checkLogin2()">
+    <h3 style="color: #fff; text-align: center;">Insert Details</h3>
+
+    <div id="information">
+      <div class="textbox-home">
+        <input type="text" placeholder="Name" id="name" />
+      </div>
+      <div class="textbox-home">
+        <input type="text" placeholder="Mobile Number" id="number" />
+      </div>
+      <div class="textbox-home">
+        <input type="text" placeholder="Batch" id="batch" />
+      </div>
+      <div class="textbox-home">
+        <input type="text" placeholder="ID Number" id="id" />
+      </div>
+    </div>
+    <button class="btn btn-home" style="margin-bottom: 15px;" onclick="saveData()">Save</button>
+
+    <button class="btn btn-home" onclick="logout()">
+      Logout
+    </button>
+  </body>
+  <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-database.js"></script>
+  <script src="./custom.js"></script>
+</html>

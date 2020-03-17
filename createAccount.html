@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Student Refgistration form</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body onload="checkLogin()">
+    <div class="login-box">
+      <h1>Registration</h1>
+      <div class="textbox">
+        <i class="fas fa-user"></i>
+        <input type="email" placeholder="email" id='email' />
+      </div>
+
+      <div class="textbox">
+        <i class="fas fa-lock"></i>
+        <input type="password" placeholder="Password" id='password' />
+      </div>
+
+      <input type="button" class="btn" value="SIGNUP" onclick="signup()" />
+    </div>
+  </body>
+  <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-database.js"></script>
+  <script src="./custom.js"></script>
+</html>
