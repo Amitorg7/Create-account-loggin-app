@@ -10,8 +10,6 @@ var firebaseConfig = {
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 
-var submitBtn = document.getElementById("signInForm");
-
 function checkLogin() {
   if (window.localStorage.getItem("loginInfo")) {
     window.location.href = "./home.html";
@@ -39,9 +37,6 @@ function signup() {
       .catch(function(error) {
         alert(error.message);
       });
-
-  
-
 }
 function login() {
   var email = document.getElementById("email").value;
@@ -78,12 +73,15 @@ function saveData() {
   var batch = document.getElementById("batch").value;
   var id = document.getElementById("id").value;
 
+
   if(name&&number&&batch&&id){
-    firebase.database().ref("user").set({
+    const userId= firebase.auth().currentUser.uid;
+    firebase.database().ref('/users/' +userId).set({
       name: name,
       number: number,
       batch: batch,
-      ID: id
+      ID: id,
+      active: true
   }).then(function(){
     document.getElementById("name").value="";
     document.getElementById("number").value="";
